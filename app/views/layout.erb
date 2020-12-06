@@ -7,8 +7,17 @@
 
     <div class="container">
       <h1>Welcome to Fwitter!</h1>
-      <h2>This is located in layout.erb!</h2>
-      <h2>Don't forget to <strong>yield</strong> your views!</h2>
+      <%= yield %>
+      <br><br>
+      <a href="/tweets/new">Post new tweet </a> |
+      <a href="/tweets">View tweets </a> | 
+
+      <a href="/login">Login </a> | 
+
+      <a href="/signup">Signup</a> | 
+
+      <a href="/logout">Logout</a>
+     
     </div>
 
   </body>

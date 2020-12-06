@@ -1,0 +1,13 @@
+<h2> View tweet </h2>
+
+@<%= @tweet.user.username %> : <%= @tweet.content %>
+
+<br><br>
+<% if @tweet.user.id == session[:user_id] %>
+<a href="/tweets/<%= @tweet.id %>/edit">Edit Tweet</a><br>
+
+<form method="POST" action="/tweets/<%= @tweet.id %>/delete">
+    <input type="hidden" name="_method" value="DELETE">
+    <button type="submit" value="Delete Tweet">
+</form>
+<% end %>
