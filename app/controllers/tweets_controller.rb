@@ -45,8 +45,12 @@ class TweetsController < ApplicationController
     post '/tweets/:id' do
         redirect_if_not_logged_in
         tweet = Tweet.find(params[:id])
-        tweet.update(params)
-        redirect "/tweets/#{tweet.id}"
+        if params[:content].blank?
+            redirect "tweets/#{tweet.id}"
+        else
+            tweet.update(params)
+            redirect "/tweets/#{tweet.id}"
+        end
     end
 
     delete '/tweets/:id/delete' do
